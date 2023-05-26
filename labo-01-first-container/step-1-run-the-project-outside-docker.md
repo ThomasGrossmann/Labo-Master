@@ -10,13 +10,13 @@
 git clone https://github.com/spring-projects/spring-petclinic.git
 ```
 
-* Read carefully the readme file
+* Read the readme file carefully
 
 <!---->
 
-* [ ] What type of application is it ?
-* [ ] Which database engine is used ?
-* [ ] Do we need to install the package manager _MAVEN_ before building the project ?
+* [ ] What type of application is it?
+* [ ] Which database engine is used?
+* [ ] Do we need to install the package manager _MAVEN_ before building the project?
 
 <!---->
 
@@ -24,23 +24,13 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 <!---->
 
-* [ ] Which version of Java should compatible with the code provided ?
+* [ ] Which version of Java should be compatible with the code provided?
 
 ## Setup Java components
 
-### Check your current java installation
+### Check your current Java installation
 
-* [ ] Where is java installed ?
-
-```
-[INPUT]
-//TODO
-
-[OUTPUT]
-//TODO
-```
-
-* [ ] Which current compiler is installed (JDK) ?
+* [ ] Where is Java installed?
 
 ```
 [INPUT]
@@ -50,7 +40,16 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 //TODO
 ```
 
-* [ ] Which current runtime is installed (JRE) ?
+* [ ] Which current compiler is installed (JDK)?
+
+<pre><code><strong>[INPUT]
+</strong>//TODO
+
+[OUTPUT]
+//TODO
+</code></pre>
+
+* [ ] Which current runtime is installed (JRE)?
 
 ```
 [INPUT]
@@ -60,29 +59,28 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 //TODO
 ```
 
-* [ ] Do we need to install the java virtual machine (JVM) ?
+* [ ] Do we need to install the Java virtual machine (JVM)?
 
 ```
+//TODO
 ```
 
 ### Install the Open JDK
 
-* [Oracle Download Web Site](https://jdk.java.net/20/)
+* [Oracle Download WebSite](https://jdk.java.net/20/)
 
 {% hint style="info" %}
 * Accept the end user license before trying, then
-* Then get the target url (cookies.
+* Then get the target URL (cookies).
 {% endhint %}
 
-```
+```powershell
 [INPUT]
 //TODO
 
 [OUTPUT]
 //TODO
 ```
-
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Powershell output during sdk download process</p></figcaption></figure>
 
 #### Check the archive integrity before installing the JDK
 
@@ -90,7 +88,7 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 * Generate your local hash based on the archive downloaded ([help](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3))
 * Compare both hashes...
 
-```
+```powershell
 [INPUT]
 //TODO
 
@@ -108,9 +106,7 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 //TODO
 ```
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Powershell output during unzip process</p></figcaption></figure>
-
-#### Move the unzip folder to Progams Folder
+#### Move the unzip folder to Programs Folder
 
 ```
 [INPUT]
@@ -139,7 +135,7 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 * [ ] Update PATH environment variable
 
 {% hint style="info" %}
-Backup your current path before updating it.
+Back up your current path before updating it.
 
 echo %PATH% > path.back
 {% endhint %}
@@ -150,9 +146,10 @@ echo %PATH% > path.back
 
 [OUTPUT]
 //TODO
+
 ```
 
-* [ ] Check the variables settings
+* [ ] Check the variables
 
 ```
 [INPUT]
@@ -160,6 +157,7 @@ echo %PATH% > path.back
 
 [OUTPUT]
 //TODO
+
 ```
 
 ## Build and test the project
@@ -172,13 +170,8 @@ echo %PATH% > path.back
 //TODO
 ```
 
-
 ### Result expected 
 
-```
-[INPUT]
-//TODO
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-[OUTPUT]
-//TODO
-```
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>

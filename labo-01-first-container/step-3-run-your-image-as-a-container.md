@@ -16,13 +16,11 @@ Linux user, change ^ by ' to execute multi lines commands.
 ```
 [INPUT]
 curl --request GET ^
---url http://localhost/actuator/health ^
+--url http://localhost:8080/actuator/health ^
 --header 'content-type: application/json'
 
 [OUTPUT]
-{"status":"UP"}
-
-//disregard the message curl: (6) Could not resolve host: application
+curl: (7) Failed to connect to localhost port 8080 after 5 ms: Couldn't connect to server
 ```
 
 * [ ] List all Dockers currently running on your local environment. Observe the port forwarding for your "petclinic" docker.

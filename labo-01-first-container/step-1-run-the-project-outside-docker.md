@@ -14,9 +14,9 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 <!---->
 
-* [ ] What type of application is it?
-* [ ] Which database engine is used?
-* [ ] Do we need to install the package manager _MAVEN_ before building the project?
+* [x] What type of application is it? : Application web
+* [x] Which database engine is used? : H2, Postgres, MySQL
+* [x] Do we need to install the package manager _MAVEN_ before building the project? : No, you can also build the project using Gradle.
 
 <!---->
 
@@ -24,46 +24,43 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 <!---->
 
-* [ ] Which version of Java should be compatible with the code provided?
+* [x] Which version of Java should be compatible with the code provided? : 17 or newer
 
 ## Setup Java components
 
 ### Check your current Java installation
 
-* [ ] Where is Java installed?
+* [x] Where is Java installed?
 
 ```
 [INPUT]
-//TODO
+which java
 
 [OUTPUT]
-//TODO
+/usr/bin/java
 ```
 
-* [ ] Which current compiler is installed (JDK)?
-
-<pre><code><strong>[INPUT]
-</strong>//TODO
-
-[OUTPUT]
-//TODO
-</code></pre>
-
-* [ ] Which current runtime is installed (JRE)?
+* [x] Which current compiler is installed (JDK)?
 
 ```
 [INPUT]
-//TODO
+java --version
 
 [OUTPUT]
-//TODO
+openjdk 20.0.1 2023-04-18
 ```
 
-* [ ] Do we need to install the Java virtual machine (JVM)?
+* [x] Which current runtime is installed (JRE)?
 
 ```
-//TODO
+[INPUT]
+java --version
+
+[OUTPUT]
+OpenJDK Runtime Environment (build 20.0.1+9-29)
 ```
+
+* [x] Do we need to install the Java virtual machine (JVM)? : No, it is included in the JDK.
 
 ### Install the Open JDK
 
@@ -74,12 +71,12 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 * Then get the target URL (cookies).
 {% endhint %}
 
-```powershell
+```
 [INPUT]
-//TODO
+curl https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_macos-aarch64_bin.tar.gz --output openjdk.tar.gz
 
 [OUTPUT]
-//TODO
+No specific output.
 ```
 
 #### Check the archive integrity before installing the JDK
@@ -88,32 +85,32 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 * Generate your local hash based on the archive downloaded ([help](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3))
 * Compare both hashes...
 
-```powershell
+```
 [INPUT]
-//TODO
+shasum -a 256 openjdk.tar.gz
 
 [OUTPUT]
-//TODO
+78ae5bb4c96632df8d3f776919c95653d1afd3e715981c4d33be5b3c81d05420  openjdk.tar.gz
 ```
 
 #### Unzip jdk archive
 
 ```
 [INPUT]
-//TODO
+tar -xf openjdk.tar.gz
 
 [OUTPUT]
-//TODO
+No specific output.
 ```
 
 #### Move the unzip folder to Programs Folder
 
 ```
 [INPUT]
-//TODO
+sudo mv jdk-20.0.1.jdk /Library/Java/JavaVirtualMachines
 
 [OUTPUT]
-//TODO
+No specific output.
 ```
 
 #### Set environment variables
@@ -122,17 +119,18 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 <!---->
 
-* [ ] Set JAVA\_HOME variable
+* [x] Set JAVA\_HOME variable
 
 ```
 [INPUT]
-//TODO
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-20.0.1.jdk
+echo $JAVA_HOME
 
 [OUTPUT]
-//TODO
+/Library/Java/JavaVirtualMachines/jdk-20.0.1.jdk
 ```
 
-* [ ] Update PATH environment variable
+* [x] Update PATH environment variable
 
 {% hint style="info" %}
 Back up your current path before updating it.
@@ -142,32 +140,50 @@ echo %PATH% > path.back
 
 ```
 [INPUT]
-//TODO
+echo $PATH > path.back
 
 [OUTPUT]
-//TODO
-
+No specific output.
 ```
 
-* [ ] Check the variables
+* [x] Check the variables
 
 ```
 [INPUT]
-//TODO
+export PATH=$JAVA_HOME/bin:$PATH
+which java
 
 [OUTPUT]
-//TODO
-
+/usr/bin/java
 ```
 
 ## Build and test the project
 
 ```
 [INPUT]
-//TODO
+./mvnw package
 
 [OUTPUT]
-//TODO
+[INFO] Results:
+[INFO]
+[WARNING] Tests run: 41, Failures: 0, Errors: 0, Skipped: 1
+[INFO]
+[INFO]
+[INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ spring-petclinic ---
+[INFO] Loading execution data file /Users/thomas/Documents/Github/VIR1/spring-petclinic/target/jacoco.exec
+[INFO] Analyzed bundle 'petclinic' with 21 classes
+[INFO]
+[INFO] --- maven-jar-plugin:3.3.0:jar (default-jar) @ spring-petclinic ---
+[INFO] Building jar: /Users/thomas/Documents/Github/VIR1/spring-petclinic/target/spring-petclinic-3.0.0-SNAPSHOT.jar
+[INFO]
+[INFO] --- spring-boot-maven-plugin:3.0.4:repackage (repackage) @ spring-petclinic ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.417 s
+[INFO] Finished at: 2023-06-02T10:38:42+02:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 ### Result expected 

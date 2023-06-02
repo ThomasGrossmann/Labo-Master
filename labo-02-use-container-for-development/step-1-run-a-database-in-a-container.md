@@ -12,53 +12,54 @@ Take the time to become familiar with the concept of volumes before carrying out
 
 Let's create both volumes, one for the data, and another one for the db config.
 
-* [ ] Create one volume for the MySQL data (tag name : mysql_data)
+* [x] Create one volume for the MySQL data (tag name : mysql_data)
 
 ```
 [INPUT]
-//TODO
+docker volume create mysql_data
 
 [OUTPUT]
 mysql_data
 ```
 
-* [] Create a second volume for the MySQL configuration (tag name : mysql_config)
+* [x] Create a second volume for the MySQL configuration (tag name : mysql_config)
 
 ```
 [INPUT]
-//TODO
+docker volume create mysql_config
 
 [OUTPUT]
 mysql_config
 ```
 
-* [] List the volumes
+* [x] List the volumes
 
 ```
 [INPUT]
-//TODO
+docker volume ls
 
 [OUTPUT]
 DRIVER    VOLUME NAME
 local     mysql_config
 local     mysql_data
+local     vscode
 ```
 
 ### Network Creation
 
 Let's create a user-defined bridge network enabling our application and our database to talk to each other.
 
-* [] Create the network
+* [x] Create the network
 
 ```
 [INPUT]
-//TODO
+ docker network create mysqlnet
 
 [OUTPUT]
-//TODO
+2a3f1d29ce9b78a1c006819df8ece2a77588ce5ad9c96e65c136a33b3bb761a0
 ```
 
-* [] List the networks
+* [x] List the networks
 
 ```
 [INPUT]
@@ -66,10 +67,10 @@ docker network ls
 
 [OUTPUT]
 NETWORK ID     NAME       DRIVER    SCOPE
-805d02ebf9f0   bridge     bridge    local
-f3b0c7151a6f   host       host      local
-b952e34b3da7   mysqlnet   bridge    local
-5884ab7981ab   none       null      local
+e36d9f7267f3   bridge     bridge    local
+88343c0979c8   host       host      local
+2a3f1d29ce9b   mysqlnet   bridge    local
+cd0c79fb59bd   none       null      local
 ```
 
 ### Run MySQL
